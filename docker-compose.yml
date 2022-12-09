@@ -11,9 +11,8 @@ services:
     volumes:
       - ./conf:/etc/mysql/conf.d
       - ./data:/var/lib/mysql
-    networks:
-      - backend
 
 networks:
-  backend:
-    driver: bridge
+  default:
+    name: mariadb_net
+    external: true
